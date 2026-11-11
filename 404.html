@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<base href="https://tonyonier99.github.io/hamon-site/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>找不到這一頁｜波紋 Hamon</title>
+<meta name="description" content="波紋 Hamon：卡住的時候，先呼吸一分鐘">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="找不到這一頁｜波紋 Hamon">
+<meta property="og:description" content="波紋 Hamon：卡住的時候，先呼吸一分鐘">
+<meta property="og:image" content="https://tonyonier99.github.io/hamon-site/assets/icon-512.png">
+<link rel="icon" type="image/png" href="assets/icon-64.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/site.css?v=b9987d0fef">
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="404.html#main">跳到主要內容</a>
+<header class="site"><div class="wrap"><a class="logo" href="index.html"><img src="assets/icon-64.png" alt="" width="34" height="34">波紋 Hamon</a><nav class="site-nav" aria-label="主選單"><a href="features.html">功能</a><a href="support.html">支援</a></nav><a class="nav-cta" href="download.html">下載 App</a></div></header>
+<main id="main">
+<section class="nf"><img src="assets/icon-512.png" alt="" width="120" height="120">
+<h1>找不到這一頁</h1><p class="sc-lead">先呼吸一下，再從首頁重新開始。</p>
+<div class="sc-actions"><a class="sc-btn" href="index.html">回首頁</a></div></section>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-links"><a href="features.html">功能</a><a href="download.html">下載</a><a href="support.html">支援</a><a href="privacy.html">隱私權政策</a><a href="terms.html">使用條款</a></div><p class="foot-note">波紋不宣稱能治療任何事。在雲端追求效率，也別忘了在現實中找回平靜——讓每次呼吸，都成為找回平衡的開始。</p><p class="foot-note">© 《呀沙係・引力》</p></div></footer>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = Array.prototype.slice.call(document.querySelectorAll('[data-reveal], [data-stagger]'));
+  function show(el) { el.classList.add('in'); }
+  if (reduce || !('IntersectionObserver' in window)) { targets.forEach(show); }
+  else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { targets.forEach(function (el) {
+      var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) show(el); }); }, 1200);
+  }
+  document.querySelectorAll('[data-carousel]').forEach(function (box) {
+    var imgs = box.querySelectorAll('.screen img'), dots = box.querySelectorAll('.dots button');
+    var cap = box.querySelector('.shot-cap'), i = 0, timer = null;
+    function go(n) {
+      imgs[i].classList.remove('on'); dots[i].classList.remove('on'); dots[i].setAttribute('aria-pressed', 'false');
+      i = (n + imgs.length) % imgs.length;
+      imgs[i].classList.add('on'); dots[i].classList.add('on'); dots[i].setAttribute('aria-pressed', 'true');
+      if (cap) cap.textContent = imgs[i].alt;
+    }
+    function start() { if (!reduce && !timer) timer = setInterval(function () { go(i + 1); }, 3200); }
+    function stop() { clearInterval(timer); timer = null; }
+    dots.forEach(function (d, n) { d.addEventListener('click', function () { stop(); go(n); start(); }); });
+    box.addEventListener('mouseenter', stop); box.addEventListener('mouseleave', start);
+    start();
+  });
+})();
+</script>
+
+</body>
+</html>

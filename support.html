@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>支援｜波紋 Hamon</title>
+<meta name="description" content="波紋 Hamon：卡住的時候，先呼吸一分鐘">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="支援｜波紋 Hamon">
+<meta property="og:description" content="波紋 Hamon：卡住的時候，先呼吸一分鐘">
+<meta property="og:image" content="https://tonyonier99.github.io/hamon-site/assets/icon-512.png">
+<link rel="icon" type="image/png" href="assets/icon-64.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/site.css?v=b9987d0fef">
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="site"><div class="wrap"><a class="logo" href="index.html"><img src="assets/icon-64.png" alt="" width="34" height="34">波紋 Hamon</a><nav class="site-nav" aria-label="主選單"><a href="features.html">功能</a><a href="support.html" class="on" aria-current="page">支援</a></nav><a class="nav-cta" href="download.html">下載 App</a></div></header>
+<main id="main">
+<article class="legal"><h1>支援</h1><p class="muted">卡住的時候，先呼吸一分鐘</p>
+<p>波紋 Hamon 是陪你呼吸一到五分鐘的小工具。使用上有問題、想要什麼功能，或覺得哪裡怪怪的，都歡迎告訴我們。</p>
+<h2>常見問題</h2>
+<div class="faq">
+<p><strong>要付費或註冊嗎？</strong>全部功能免費，沒有訂閱、沒有付費牆；不用註冊、不用登入。設定頁有請開發者喝杯咖啡的選項，純自願。</p>
+<p><strong>練習紀錄存在哪裡？</strong>只存在你的手機。刪除 App 會一併刪除紀錄。</p>
+<p><strong>怎麼把練習時間記到「健康」App？</strong>在設定頁開啟 Apple 健康，波紋會自動寫入「正念分鐘」。</p>
+<p><strong>沒有收到每日提醒或番茄鐘結束提醒？</strong>波紋沒有通知權限時，每日提醒與番茄鐘結束提醒都不會出現。可以到系統設定裡開啟。</p>
+<p><strong>Apple Watch 的紀錄和 iPhone 對不上？</strong>手錶練完會自動同步到 iPhone 與健康 App。<span class="todo">【待站長確認】</span>（同步沒出現時的排除步驟）</p>
+<p><strong>怎麼最快開始 SOS 緊急呼吸？</strong>鎖定畫面小工具、Apple Watch 錶面、App 內的 SOS 入口都能直達。</p>
+</div>
+<h2>需要更多支持</h2>
+<p>你不需要一個人撐著。呼吸能幫你緩一口氣，但有些時候，找一個人說說話，更有力量。</p>
+<div class="hotlines">
+<a href="tel:1925"><span><b>1925</b> 安心專線</span><span>24 小時免付費 · 心理諮詢</span></a>
+<a href="tel:1995"><span><b>1995</b> 生命線</span><span>24 小時 · 陪你度過難關</span></a>
+<a href="tel:1980"><span><b>1980</b> 張老師</span><span>工作時段 · 心理支持</span></a>
+</div>
+<p>如果你或身邊的人有立即危險，請立刻撥打 <a href="tel:119">119</a> 或 <a href="tel:110">110</a>。</p>
+<p class="muted">波紋是陪伴，不是醫療或治療。號碼來源：衛生福利部</p>
+<h2>聯絡我們</h2>
+<p>來信：<a href="mailto:tonyonier99@gmail.com">tonyonier99@gmail.com</a>（App 內設定頁「提供回饋」會自動附上版本資訊）</p>
+</article>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-links"><a href="features.html">功能</a><a href="download.html">下載</a><a href="support.html">支援</a><a href="privacy.html">隱私權政策</a><a href="terms.html">使用條款</a></div><p class="foot-note">波紋不宣稱能治療任何事。在雲端追求效率，也別忘了在現實中找回平靜——讓每次呼吸，都成為找回平衡的開始。</p><p class="foot-note">© 《呀沙係・引力》</p></div></footer>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = Array.prototype.slice.call(document.querySelectorAll('[data-reveal], [data-stagger]'));
+  function show(el) { el.classList.add('in'); }
+  if (reduce || !('IntersectionObserver' in window)) { targets.forEach(show); }
+  else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { targets.forEach(function (el) {
+      var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) show(el); }); }, 1200);
+  }
+  document.querySelectorAll('[data-carousel]').forEach(function (box) {
+    var imgs = box.querySelectorAll('.screen img'), dots = box.querySelectorAll('.dots button');
+    var cap = box.querySelector('.shot-cap'), i = 0, timer = null;
+    function go(n) {
+      imgs[i].classList.remove('on'); dots[i].classList.remove('on'); dots[i].setAttribute('aria-pressed', 'false');
+      i = (n + imgs.length) % imgs.length;
+      imgs[i].classList.add('on'); dots[i].classList.add('on'); dots[i].setAttribute('aria-pressed', 'true');
+      if (cap) cap.textContent = imgs[i].alt;
+    }
+    function start() { if (!reduce && !timer) timer = setInterval(function () { go(i + 1); }, 3200); }
+    function stop() { clearInterval(timer); timer = null; }
+    dots.forEach(function (d, n) { d.addEventListener('click', function () { stop(); go(n); start(); }); });
+    box.addEventListener('mouseenter', stop); box.addEventListener('mouseleave', start);
+    start();
+  });
+})();
+</script>
+
+</body>
+</html>
