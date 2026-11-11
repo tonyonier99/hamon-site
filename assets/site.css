@@ -455,7 +455,7 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 
 .wg-wrap { --pt:min(1px, calc((100vw - 2.5rem) / 364)); display:grid; gap:1.4rem; justify-items:center; }
 .wg { position:relative; overflow:hidden; background:#FCFAF5; color:#334059; border-radius:calc(var(--pt) * 22);
-  box-shadow:0 10px 30px var(--shadow); font-family:ui-rounded,"SF Pro Rounded",-apple-system,"PingFang TC",sans-serif; }
+  box-shadow:0 10px 30px var(--shadow); text-align:left; font-family:ui-rounded,"SF Pro Rounded",-apple-system,"PingFang TC",sans-serif; }
 .wg::before, .wg::after, .wg .rp { content:""; position:absolute; border-radius:50%; border:calc(var(--pt) * 2) solid rgba(51,64,89,.04);
   left:50%; top:50%; transform:translate(-50%,-50%) translate(calc(var(--pt) * 90), calc(var(--pt) * 50)); pointer-events:none; }
 .wg::before { width:calc(var(--pt) * var(--r1)); aspect-ratio:1; }
@@ -476,11 +476,10 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 .wg-s .brand { position:relative; font-size:calc(var(--pt) * 9); letter-spacing:calc(var(--pt) * 1.5); padding:calc(var(--pt) * 16) 0 0 calc(var(--pt) * 16); }
 .wg-s .btn { position:relative; justify-content:center; padding-bottom:calc(var(--pt) * 8); }
 .wg-s .lbl { font-size:calc(var(--pt) * 14); font-weight:900; }
-.wg-pair { display:flex; gap:calc(var(--pt) * 24); align-items:center; }
-.wg-lock { width:calc(var(--pt) * 68); height:calc(var(--pt) * 68); border-radius:50%; display:flex; align-items:center; justify-content:center;
-  background:rgba(51,64,89,.14); color:#334059; font-size:calc(var(--pt) * 26); }
-.wg-cap { font-size:.84rem; color:var(--sub); line-height:1.6; text-align:center; max-width:22rem; }
-.wg-cap b { color:var(--ink); }
+.wg-fig { display:flex; flex-direction:column; align-items:center; text-align:center; margin:0; }
+.wg-fig figcaption { margin-top:.7rem; font-size:.82rem; line-height:1.55; color:var(--sub); max-width:22rem; }
+.wg-fig figcaption b { display:block; color:var(--ink); font-size:.92rem; }
+.wg-fig figcaption b span { font-weight:600; color:var(--sub); font-size:.78rem; margin-left:.4rem; }
 
 .bh-band { padding:4.6rem 0; }
 .bh-band.tint { background:var(--tint); }
@@ -508,9 +507,15 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 .bh-list p { font-size:.97rem; line-height:1.8; margin-top:.2rem; color:var(--ink); }
 .bh-rhythm { display:block; font-size:.82rem; color:var(--sub); margin-top:.35rem; letter-spacing:.02em; font-variant-numeric:tabular-nums; }
 .bh-all { display:inline-block; margin-top:1.2rem; font-weight:800; }
-.bh-any { display:grid; grid-template-columns:minmax(0,1fr); gap:2rem; align-items:center; margin-top:2rem; }
-@media (min-width:900px) { .bh-any { grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); } }
-.bh-watch { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.6rem 1.2rem; margin-top:1.6rem; max-width:440px; }
+.bh-any { margin-top:2.2rem; }
+.bh-any .sc-points { display:grid; gap:.4rem 2.4rem; max-width:60rem; margin:0 auto; }
+@media (min-width:900px) { .bh-any .sc-points { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+.bh-watch { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.6rem 1.2rem; margin:2.8rem auto 0; max-width:440px; }
+.bh-devices { display:grid; gap:2.4rem; align-items:center; justify-items:center; margin-top:2.8rem; }
+.bh-devices .bh-watch { margin:0; }
+@media (min-width:900px) { .bh-devices { grid-template-columns:auto auto; justify-content:center; column-gap:4.5rem; } }
+.bh-one { max-width:none; } .bh-one mark { white-space:nowrap; }
+@media (min-width:900px) { .bh-one h2 { white-space:nowrap; font-size:clamp(1.6rem,2.7vw,2.4rem); } }
 .bh-watch figure { display:flex; flex-direction:column; align-items:center; text-align:center; }
 .bh-watch img { width:100%; max-width:168px; height:auto; aspect-ratio:416/496; object-fit:cover; border-radius:30px; border:7px solid var(--frame); }
 .bh-watch figcaption { margin-top:.6rem; font-size:.84rem; line-height:1.5; color:var(--sub); }
