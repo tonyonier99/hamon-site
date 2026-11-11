@@ -453,7 +453,7 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 @media (max-width:899px) { .bh-tourwrap > div:first-child { display:contents; } .bh-tourwrap .bh-head { text-align:center; margin:0 auto; }
   .bh-tour { order:1; } .bh-steps { order:2; margin-top:0; } }
 
-.wg-wrap { --pt:min(1px, calc((100vw - 2.5rem) / 364)); display:grid; gap:1.4rem 2.4rem; justify-items:center; align-items:end; }
+.wg-wrap { --pt:min(1px, calc((100vw - 2.5rem) / 364)); display:grid; gap:2rem 3.6rem; justify-items:center; align-items:end; }
 @media (min-width:900px) { .wg-wrap { grid-template-columns:auto auto; } }
 .wg { position:relative; overflow:hidden; background:#FCFAF5; color:#334059; border-radius:calc(var(--pt) * 22);
   box-shadow:0 10px 30px var(--shadow); text-align:left; font-family:ui-rounded,"SF Pro Rounded",-apple-system,"PingFang TC",sans-serif; }
@@ -488,8 +488,11 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 .bh-head.center { margin:0 auto; text-align:center; }
 .bh-head h2 { font-size:clamp(1.6rem,3.8vw,2.3rem); font-weight:800; line-height:1.4; }
 .bh-head p { color:var(--sub); font-size:1.04rem; line-height:1.9; margin-top:.7rem; }
-.bh-moment { display:grid; grid-template-columns:minmax(0,1fr); gap:2rem; align-items:start; margin-top:2rem; }
-@media (min-width:900px) { .bh-moment { grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); } }
+.bh-moment { display:grid; grid-template-columns:minmax(0,1fr); gap:2rem; align-items:center; }
+.bh-mphone { display:flex; justify-content:center; } .bh-mphone .sc-stage { width:min(420px,100%); }
+.bh-mlist { margin-top:1.4rem; }
+@media (min-width:900px) { .bh-moment { grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); gap:3.5rem; } }
+@media (max-width:899px) { .bh-mtext { display:contents; } .bh-mphone { order:1; } .bh-mlist { margin-top:0; } }
 .bh-seg { display:flex; width:100%; max-width:30rem; gap:2px; background:rgba(118,118,128,.12); border-radius:10px; padding:2px; margin-top:1.6rem; }
 .bh-seg button { font:inherit; font-size:.95rem; font-weight:600; color:var(--ink); background:none; border:0; border-radius:8px;
   flex:1; white-space:nowrap; padding:.45rem .3rem; min-height:40px; cursor:pointer; }
@@ -512,9 +515,9 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 .bh-any .sc-points { display:grid; gap:.4rem 2.4rem; max-width:60rem; margin:0 auto; }
 @media (min-width:900px) { .bh-any .sc-points { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 .bh-watch { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.6rem 1.2rem; margin:2.8rem auto 0; max-width:440px; }
-.bh-devices { display:grid; gap:3rem; align-items:center; justify-items:center; margin-top:2.8rem; }
+.bh-devices { display:grid; gap:4rem; align-items:center; justify-items:center; margin-top:2.8rem; }
 .bh-devices .bh-watch { margin:0; }
-@media (min-width:900px) { .bh-devices .bh-watch { grid-template-columns:repeat(4,minmax(0,1fr)); max-width:60rem; } }
+@media (min-width:900px) { .bh-devices .bh-watch { grid-template-columns:repeat(4,minmax(0,1fr)); max-width:64rem; column-gap:2.6rem; } }
 .bh-one { max-width:none; } .bh-one mark { white-space:nowrap; }
 @media (min-width:900px) { .bh-one h2 { white-space:nowrap; font-size:clamp(1.6rem,2.7vw,2.4rem); } }
 .bh-watch figure { display:flex; flex-direction:column; align-items:center; text-align:center; }
