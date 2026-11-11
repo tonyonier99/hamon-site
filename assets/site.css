@@ -453,7 +453,8 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 @media (max-width:899px) { .bh-tourwrap > div:first-child { display:contents; } .bh-tourwrap .bh-head { text-align:center; margin:0 auto; }
   .bh-tour { order:1; } .bh-steps { order:2; margin-top:0; } }
 
-.wg-wrap { --pt:min(1px, calc((100vw - 2.5rem) / 364)); display:grid; gap:1.4rem; justify-items:center; }
+.wg-wrap { --pt:min(1px, calc((100vw - 2.5rem) / 364)); display:grid; gap:1.4rem 2.4rem; justify-items:center; align-items:end; }
+@media (min-width:900px) { .wg-wrap { grid-template-columns:auto auto; } }
 .wg { position:relative; overflow:hidden; background:#FCFAF5; color:#334059; border-radius:calc(var(--pt) * 22);
   box-shadow:0 10px 30px var(--shadow); text-align:left; font-family:ui-rounded,"SF Pro Rounded",-apple-system,"PingFang TC",sans-serif; }
 .wg::before, .wg::after, .wg .rp { content:""; position:absolute; border-radius:50%; border:calc(var(--pt) * 2) solid rgba(51,64,89,.04);
@@ -511,9 +512,9 @@ mark { background:linear-gradient(transparent 58%,var(--highlight) 58%); color:i
 .bh-any .sc-points { display:grid; gap:.4rem 2.4rem; max-width:60rem; margin:0 auto; }
 @media (min-width:900px) { .bh-any .sc-points { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 .bh-watch { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.6rem 1.2rem; margin:2.8rem auto 0; max-width:440px; }
-.bh-devices { display:grid; gap:2.4rem; align-items:center; justify-items:center; margin-top:2.8rem; }
+.bh-devices { display:grid; gap:3rem; align-items:center; justify-items:center; margin-top:2.8rem; }
 .bh-devices .bh-watch { margin:0; }
-@media (min-width:900px) { .bh-devices { grid-template-columns:auto auto; justify-content:center; column-gap:4.5rem; } }
+@media (min-width:900px) { .bh-devices .bh-watch { grid-template-columns:repeat(4,minmax(0,1fr)); max-width:60rem; } }
 .bh-one { max-width:none; } .bh-one mark { white-space:nowrap; }
 @media (min-width:900px) { .bh-one h2 { white-space:nowrap; font-size:clamp(1.6rem,2.7vw,2.4rem); } }
 .bh-watch figure { display:flex; flex-direction:column; align-items:center; text-align:center; }
